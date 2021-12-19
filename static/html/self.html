@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" style="height: 100%;">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人中心</title>
+    <link rel="stylesheet" href="../css/layouts.css">
+    <link rel="shortcut icon" href="../sprites/tab.png" type="image/x-icon">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+    
+</head>
+<body onload="main()">
+    <div class="layout_0">
+        <div class="layout_0_div" >
+            <iframe class="layout_0_header" src="./layouts/header.html#header" frameborder="0"></iframe>
+            <div class="layout_0_body">
+                <iframe class="layout_1_left" src="./layouts/business.html" frameborder="0"></iframe>
+                <div class="layout_1_right" id="self_body">
+                    <h1 class="business_name">个人中心</h1>
+                    <hr>
+                    <div class="business_table_div">
+                        <table class="business_table" id="show_table">
+                            <th>用户名   </th>
+                            <th>个人邮箱   </th>
+                            <th>当前身份   </th>
+                            <tr>
+                                <td id="username"></td>
+                                <td id="email"></td>
+                                <td id="status"></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <iframe class="layout_0_footer" src="./layouts/footer.html#footer" frameborder="0" style="flex-grow:0.1;"></iframe>
+        </div>
+    </div>
+    <script>
+        function main(){
+            document.getElementById("username").innerHTML = localStorage.getItem("username");
+            document.getElementById("email").innerHTML = localStorage.getItem("email");
+            // 分层级的用户体系
+            let status = localStorage.getItem("status");
+            switch(status){
+                case '1':{
+                    status = "一级管理员";
+                }break;
+                case '2':{
+                    status = "二级管理员";
+                }break;
+                case '3':{
+                    status = "三级管理员";
+                }break;
+            }
+            document.getElementById("status").innerHTML = status;
+        }
+    </script>
+</body>
+</html>
