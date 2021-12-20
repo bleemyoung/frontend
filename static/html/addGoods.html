@@ -7,7 +7,7 @@
     <title>进货业务</title>
     <link rel="stylesheet" href="../css/layouts.css">
     <link rel="shortcut icon" href="../sprites/tab.png" type="image/x-icon">
-    <script src="../js/goods.js"></script>
+    <script src="../js/addGoods.js"></script>
     <script src="../js/utils.js"></script>
     <style>
         *{
@@ -26,13 +26,10 @@
                 <div class="layout_1_right" id="goods_body">
                     <h1 class="business_name">进货业务</h1>
                     
-                    <div class="business_row" >
-                        
-                        <input type="button" value="查询" id="query_goods">
-                        <input type="text" id="goods_name" placeholder="输入名称查询货物">
-                        <!-- <input type="button" id="delete_goods" value="删除"> -->
+                  <!-- 积压金额是放在仓库？？ -->
+                     <div class="business_row">
+                         积压金额<input type="text" id="remain_money">
                      </div>
-                     
                     <div  class="business_row">
                         <input type="button" id="add_goods" value="增添">
                         <input type="text" id="add_name" placeholder="货物名称">
